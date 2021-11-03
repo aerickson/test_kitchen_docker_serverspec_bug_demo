@@ -39,6 +39,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
     - name: Install bundler
       run: gem install bundler
     - name: Install gems via bundler
