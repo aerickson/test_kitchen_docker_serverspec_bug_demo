@@ -1,0 +1,49 @@
+---
+driver:
+  name: docker
+  use_sudo: false
+  privileged: true
+  run_command: /bin/systemd
+  cap_add:
+    - SYS_ADMIN
+
+# provisioner:
+#   defaults to chef, fails with puppet also
+
+platforms:
+  - name: ubuntu-18.04
+
+verifier:
+  name: serverspec
+  default_pattern: true
+
+busser:
+  sudo: true
+
+suites:
+  - name: linux
+    provisioner:
+    attributes:
+
+
+# kitchen-docker example config
+#
+# ---
+# driver:
+#   name: docker
+#   env_variables:
+#     TEST_KEY: TEST_VALUE
+
+# platforms:
+# - name: ubuntu
+#   run_list:
+#   - recipe[apt]
+# - name: centos
+#   driver_config:
+#     image: centos
+#     platform: rhel
+#   run_list:
+#   - recipe[yum]
+
+# transport:
+#   name: docker
