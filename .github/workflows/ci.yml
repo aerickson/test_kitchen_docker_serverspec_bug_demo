@@ -39,6 +39,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+    - name: Install bundler
+      run: gem install bundler
+    - name: Install gems via bundler
+      run: bundle install
     - name: Install Chef
       uses: actionshub/chef-install@1.1.0
       with:
