@@ -14,7 +14,7 @@ platforms:
   - name: ubuntu-18.04
 
 verifier:
-  name: serverspec
+  name: inspec
   default_pattern: true
 
 busser:
