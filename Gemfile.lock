@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/aerickson/kitchen-verifier-serverspec.git
+  revision: e5eb4a64d168306d5f93db69cf5d35ace5164670
+  branch: bundler_sets_path
+  specs:
+    kitchen-verifier-serverspec (0.7.1)
+      net-ssh (>= 3)
+      test-kitchen (>= 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -17,9 +26,6 @@ GEM
     httpclient (2.8.3)
     kitchen-docker (2.11.0)
       test-kitchen (>= 1.0.0)
-    kitchen-verifier-serverspec (0.7.1)
-      net-ssh (>= 3)
-      test-kitchen (>= 1.4)
     license-acceptance (2.1.13)
       pastel (~> 0.7)
       tomlrb (>= 1.2, < 3.0)
@@ -137,7 +143,7 @@ PLATFORMS
 
 DEPENDENCIES
   kitchen-docker
-  kitchen-verifier-serverspec
+  kitchen-verifier-serverspec!
   serverspec
   test-kitchen
 

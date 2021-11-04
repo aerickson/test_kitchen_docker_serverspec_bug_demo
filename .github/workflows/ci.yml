@@ -53,7 +53,7 @@ jobs:
         project: chef-workstation
         version: 20.11.180
     - name: Run Kitchen
-      run: kitchen verify linux
+      run: bundle exec kitchen verify linux
       env:
         CHEF_LICENSE: accept-no-persist
         CHEF_VERSION: 13.10.0
