@@ -2,9 +2,31 @@
 
 looks to be due to a change in bundler v2.2.30 (problem not present when using v2.2.29)
 
-## commit founnd via bisect
+https://github.com/rubygems/rubygems/compare/bundler-v2.2.29...bundler-v2.2.30
 
-in https://github.com/rubygems/rubygems
+## finding exact commit via bisect
+
+first clone https://github.com/rubygems/rubygems in /tmp/kitchen.
+
+test script:
+
+```
+#!/usr/bin/env bash
+set -e
+set -x
+
+ROOT=/tmp/kitchen
+
+cd $ROOT/rubygems/bundler
+gem uninstall bundler -ax
+rm *.gem
+gem build *.gemspec
+gem install *.gem
+cd $ROOT
+bundle install
+```
+
+bisect reveals:
 
 ```
 3f5dce51add904823e59b6423a23748885023810 is the first bad commit
