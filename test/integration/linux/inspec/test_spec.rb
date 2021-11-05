@@ -6,17 +6,17 @@ describe 'users' do
   end
 end
 
-describe bash('date -h') do
+describe bash('zstd') do
   its('exit_status') { should eq 1 }
   # its('stdout') { should match /Usage/ }
 end
 
-describe command('date -h') do
+describe command('zstd') do
   its('exit_status') { should eq 1 }
   # its('stdout') { should match /Usage/ }
 end
 
-describe command('/bin/date -h') do
+describe command('zstd') do
   its('exit_status') { should eq 1 }
   # its('stdout') { should match /Usage/ }
 end

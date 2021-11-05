@@ -12,6 +12,8 @@ driver:
 
 platforms:
   - name: ubuntu-18.04
+    run_list:
+    - recipe[zstd]
 
 verifier:
   name: inspec
