@@ -16,7 +16,7 @@ describe command('date -h') do
   # its('stdout') { should match /Usage/ }
 end
 
-describe command('/bin/date') do
+describe command('/bin/date -h') do
   its('exit_status') { should eq 1 }
   # its('stdout') { should match /Usage/ }
 end
