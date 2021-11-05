@@ -33,7 +33,7 @@ jobs:
         os:
           # - centos-7
           # - centos-stream-8
-          # - ubuntu-1804
+          - ubuntu-1804
           - ubuntu-2004
     runs-on: ubuntu-latest
     steps:
@@ -47,11 +47,11 @@ jobs:
       run: gem install bundler
     - name: Install gems via bundler
       run: bundle install
-    - name: Install Chef
-      uses: actionshub/chef-install@1.1.0
-      with:
-        project: chef-workstation
-        version: 20.11.180
+    # - name: Install Chef
+    #   uses: actionshub/chef-install@1.1.0
+    #   with:
+    #     project: chef-workstation
+    #     version: 20.11.180
     - name: Run Kitchen
       run: kitchen verify linux
       env:
